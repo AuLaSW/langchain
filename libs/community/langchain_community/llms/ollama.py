@@ -58,6 +58,10 @@ class _OllamaCommon(BaseLanguageModel):
     """The number of GPUs to use. On macOS it defaults to 1 to
     enable metal support, 0 to disable."""
 
+    tensor_split: Optional[str] = None
+    """How to split the tensors on a machine with multiple GPUs, of the format
+    '[float, float, ...]'"""
+
     num_thread: Optional[int] = None
     """Sets the number of threads to use during computation.
     By default, Ollama will detect this for optimal performance.
@@ -151,6 +155,7 @@ class _OllamaCommon(BaseLanguageModel):
                 "tfs_z": self.tfs_z,
                 "top_k": self.top_k,
                 "top_p": self.top_p,
+                "tensor_split": self.tensor_split,
             },
             "system": self.system,
             "template": self.template,
