@@ -58,7 +58,7 @@ class _OllamaCommon(BaseLanguageModel):
     """The number of GPUs to use. On macOS it defaults to 1 to
     enable metal support, 0 to disable."""
 
-    tensor_split: Optional[List[float]] = None
+    tensor_split: Optional[str] = None
     """How to split the tensors on a machine with multiple GPUs, of the format
     '[float, float, ...]'"""
 
