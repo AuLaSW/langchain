@@ -382,10 +382,10 @@ class Ollama(BaseLLM, _OllamaCommon):
             ollama = Ollama(model="llama2")
     """
 
-    class Config:
-        """Configuration for this pydantic object."""
-
-        extra = Extra.forbid
+    # class Config:
+    #     """Configuration for this pydantic object."""
+    #
+    #     extra = Extra.forbid
 
     @property
     def _llm_type(self) -> str:
